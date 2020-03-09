@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">8AMFirstProject</string>
+
+    <string name="helloWorld">Hello World! 8AM Class calling!</string>
+
+    <string name="first_name">First Name</string>
+    <string name="middle_name">Middle Name</string>
+    <string name="last_name">Last Name</string>
+
+    <string name="phoneNumberLabel">Phone Number:</string>
+    <string name="phone_number">Phone Number</string>
+</resources>
