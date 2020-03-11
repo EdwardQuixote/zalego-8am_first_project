@@ -58,8 +58,10 @@
         android:baselineAligned="false">
 
         <RelativeLayout
+            android:id="@+id/firstRelativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/txtPhoneNumberLabel"
