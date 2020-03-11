@@ -54,6 +54,7 @@
         android:id="@+id/secondLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_viewgroups_top"
         android:orientation="vertical"
         android:baselineAligned="false">
 
@@ -61,22 +62,38 @@
             android:id="@+id/firstRelativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:paddingTop="@dimen/padding_parent_top_bottom"
+            android:paddingLeft="@dimen/padding_parent_left_right"
+            android:paddingStart="@dimen/padding_parent_left_right"
+            android:paddingRight="@dimen/padding_parent_left_right"
+            android:paddingEnd="@dimen/padding_parent_left_right"
+            android:paddingBottom="@dimen/padding_parent_top_bottom">
 
             <TextView
                 android:id="@+id/txtPhoneNumberLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:labelFor="@id/edPhoneNumber"
                 android:text="@string/phoneNumberLabel"
                 android:textStyle="bold"
                 android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/spnPhoneCountryCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtPhoneNumberLabel"
+                android:layout_alignBottom="@id/edPhoneNumber"
+                android:entries="@array/array_phone_country_codes"/>
 
             <EditText
                 android:id="@+id/edPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/txtPhoneNumberLabel"
-                android:layout_toEndOf="@id/txtPhoneNumberLabel"
+                android:layout_below="@id/txtPhoneNumberLabel"
+                android:layout_toRightOf="@id/spnPhoneCountryCode"
+                android:layout_toEndOf="@id/spnPhoneCountryCode"
+                android:layout_marginTop="5dp"
                 android:hint="@string/phone_number"
                 android:inputType="phone"/>
         </RelativeLayout>

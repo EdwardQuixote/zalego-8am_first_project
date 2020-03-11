@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_parent_top_bottom">16dp</dimen>
+    <dimen name="padding_parent_left_right">18dp</dimen>
+
+    <dimen name="margin_viewgroups_top">20dp</dimen>
+
+</resources>

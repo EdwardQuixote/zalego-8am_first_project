@@ -9,4 +9,11 @@
 
     <string name="phoneNumberLabel">Phone Number:</string>
     <string name="phone_number">Phone Number</string>
+
+    <string-array name="array_phone_country_codes">
+        <item>+254</item>
+        <item>+253</item>
+        <item>+255</item>
+        <item>+256</item>
+    </string-array>
 </resources>
