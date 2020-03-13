@@ -9,6 +9,12 @@
 
     <string name="phoneNumberLabel">Phone Number:</string>
     <string name="phone_number">Phone Number</string>
+    <string name="emailAddressLabel">Email Address:</string>
+    <string name="emailAddress">Email Address</string>
+    <string name="textNeedHelp">Do you need help?</string>
+
+    <string name="buttonCancel">Cancel</string>
+    <string name="buttonSave">Save</string>
 
     <string-array name="array_phone_country_codes">
         <item>+254</item>

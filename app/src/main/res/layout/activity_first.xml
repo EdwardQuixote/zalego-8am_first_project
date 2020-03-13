@@ -98,18 +98,72 @@
                 android:inputType="phone"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/secondRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_viewgroups_top"
+            android:paddingTop="@dimen/padding_parent_top_bottom"
+            android:paddingLeft="@dimen/padding_parent_left_right"
+            android:paddingStart="@dimen/padding_parent_left_right"
+            android:paddingRight="@dimen/padding_parent_left_right"
+            android:paddingEnd="@dimen/padding_parent_left_right"
+            android:paddingBottom="@dimen/padding_parent_top_bottom">
+
+            <TextView
+                android:id="@+id/txtEmailAddressLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/edEmailAddress"
+                android:text="@string/emailAddressLabel"
+                android:textStyle="bold"
+                android:textSize="@dimen/textSize18"/>
+
+            <EditText
+                android:id="@+id/edEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/txtEmailAddressLabel"
+                android:hint="@string/emailAddress"
+                android:inputType="textEmailAddress"
+                android:autofillHints="email_address"/>
+        </RelativeLayout>
     </LinearLayout>
 
-    <!--
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/firstFrameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginTop="@dimen/margin_viewgroups_top"
+        android:paddingTop="@dimen/padding_parent_top_bottom"
+        android:paddingLeft="@dimen/padding_parent_left_right"
+        android:paddingStart="@dimen/padding_parent_left_right"
+        android:paddingRight="@dimen/padding_parent_left_right"
+        android:paddingEnd="@dimen/padding_parent_left_right"
+        android:paddingBottom="@dimen/padding_parent_top_bottom">
 
         <Button
+            android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/helloWorld"/>
-    </LinearLayout>
-    -->
+            android:layout_gravity="left|start"
+            android:text="@string/buttonCancel"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:text="@string/textNeedHelp"
+            android:textStyle="italic"
+            android:textColor="@color/colourGreen"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|end"
+            android:text="@string/buttonSave"/>
+    </FrameLayout>
 </LinearLayout>
