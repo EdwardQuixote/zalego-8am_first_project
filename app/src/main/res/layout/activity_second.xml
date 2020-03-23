@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <!-- AppBarLayout is a layout we use for the ActionBar area. In this case, we're going to have a scrolling ActionBar with the Activity Title and an Image    -->
+    <!-- NOTE: Because we're creating an ActionBar ourselves, then we'll need to change the theme of our App to be based on a parent theme that doesn't have any ActionBar. Check "AppTheme.NoActionBar" in "styles.xml")   -->
+    <!-- Remember the App Bar/Action Bar/Toolbar will always have the colour of "colourPrimary" in your Theme (check your styles.xml).   -->
+    <!-- <a href="https://developer.android.com/reference/com/google/android/material/appbar/AppBarLayout">Explore More Here</a>  -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <!-- CollapsingToolbarLayout is a simple layout used to hold a Toolbar. A Toolbar is the new technical term for the ActionBar. Users know it as the ActionBar, we technically know it as the Toolbar/AppBar.    -->
+        <!-- Please note that "ActionBar" is also the old technical name, i.e. we used to call it ActionBar, before Google changed it to Toolbar in 2017, or thereabout.    -->
+        <!-- "contentScrim" attribute in the "app" namespace specifies what colour will be used as the overlay when our Toolbar is being collapsed, as the user scrolls.    -->
+        <!-- We specify the exact behaviour of what will happen to the ToolbarLayout when the user scrolls using the attribute "layout_scrollFlags". In this case, allow the ToolbarLayout to scroll and to continue scrolling until it's fully collapsed.  -->
+        <!-- In "app:layout_scrollFlags" attribute, the value "scroll" MUST be used for the view to scroll. Explore more: https://developer.android.com/reference/com/google/android/material/appbar/AppBarLayout.LayoutParams     -->
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <!-- ImageView is used to display an Image on the UI. ImageView assumes that the user doesn't need to interact much with the image, so it's primary focus is to display an Image.   -->
+            <!-- To specify the Image to be displayed, we use the "src" attribute. If you're supporting old phones, use "app:srcCompat". The "scaleType" attributes specifies how we want the image to appear in the ImageView - in this case, the image be squeezed to ensure it fits at the center inside the ImageView.    -->
+            <!-- The attribute "contentDescription" is used to specify a description of the Image. This is for the purpose of accessibility features, e.g. when a blind user is using your App, the description will be read to them by the phone and they'll know that there's an image displaying something.  -->
+            <!-- Our ImageView is inside a CollapsingToolbarLayout, so we need to specify how it'll collapse. In this case, we use parallax.    -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/picture_1"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/description_about_image"
+                app:layout_collapseMode="parallax"/>
+
+            <!-- The actual Toolbar     -->
+            <!-- We've set the value of "layout_height" to a value that's in the Android SDK representing the default size of an ActionBar. We use the "?" to imply we're querying an attribute value that may not exist.     -->
+            <!-- We have the "layout_collapseMode" attribute which specifies how we want a child of the CollapsingToolbarLayout to collapse. In this case it's "pin", meaning we want our Toolbar to stay in place (at the top left) until it reaches the bottom of the CollapsingToolbarLayout as the user scrolls.    -->
+            <!-- Learn More: https://developer.android.com/reference/android/support/design/widget/CollapsingToolbarLayout.LayoutParams     -->
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"/>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <!--    Tabs would go in here   -->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- NestedScrollView is a layout we'll look at as we look at ScrollView. In simple terms, NestedScrollView enables the capability of having scrolling views inside scrolling views, i.e. Nested scrolling.     -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingRight="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_ipsum"
+            android:textSize="@dimen/textSize18"/>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
