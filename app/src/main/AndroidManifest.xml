@@ -20,10 +20,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FirstActivity" />
+        <activity android:name=".FirstActivity"/>
+
+
+        <!-- [START]: The Activity component in the Email App (e.g. G-Mail) that is capable of handling Send Email Intent Actions    -->
         <activity android:name=".MainActivity">
 
+            <!-- The first Intent Filter for Intents with Action "SEND"    -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <data android:mimeType="*/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+
+            <!-- The second Intent Filter for Intents with Action "SENDTO"    -->
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO"/>
+                <data android:scheme="mailto"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+
+            <!-- The second Intent Filter for Intents with Action "SEND_MULTIPLE"    -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <data android:mimeType="*/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
         </activity>
+        <!-- [END]: The Activity component in the Email App (e.g. G-Mail) that is capable of handling Send Email Intent Actions    -->
+
     </application>
 
 </manifest>
